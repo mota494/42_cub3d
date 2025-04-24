@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 10:49:45 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/24 18:09:02 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/24 18:12:42 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	get_texture(t_textures *textures, char *map_dir)
 		buffer = get_next_line(fd);
 	}
 	free(buffer);
-	buffer = NULL;
 	return (0);
 }
 
