@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/24 17:57:03 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/25 22:27:16 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ typedef struct s_map
 	t_textures	texture[MAX_TEXTURE];
 }	t_map;
 
-int	parser(t_map *map, char *map_dir);
+/* parser */
+
+int		parser(t_map *map, char *map_dir);
+
+/* parser - textures */
+
+char	*get_path(char *buffer);
+void	find_texture(char *buffer, t_textures *t_txt);
+int		get_texture(t_textures *textures, char *map_dir);
 
 #endif

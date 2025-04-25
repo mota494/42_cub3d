@@ -73,9 +73,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* get_next_line */
 
+
 char	*get_next_line(int fd);
-int		hasnl(char *str);
-char	*strjoinchr(char *oldtoret, char car);
-char	*alocpy(char *str);
+char	*ft_check_str(char *str, int charead);
+char	*ft_buffer_to_str(char	*src, int charead);
+int		ft_str_has_newline(char *str);
+int		ft_buffer_is_empty(char *buffer);
 
 #endif

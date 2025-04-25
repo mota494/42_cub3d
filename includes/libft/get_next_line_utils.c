@@ -12,50 +12,58 @@
 
 #include "libft.h"
 
-int	hasnl(char *str)
+int	ft_str_has_newline(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == '\n')
+		if (*str == '\n')
 			return (1);
-		i++;
+		str++;
 	}
 	return (0);
 }
 
-char	*alocpy(char *str)
+int	ft_buffer_is_empty(char *buffer)
 {
-	char	*toret;
-	int		i;
+	int	i;
 
 	i = 0;
-	toret = malloc(sizeof(char) * ft_strlen(str) + 1);
-	while (str[i])
-	{
-		toret[i] = str[i];
+	while (buffer[i] == 0 && i < BUFFER_SIZE)
 		i++;
-	}
-	toret[i] = '\0';
-	return (toret);
+	if (i == BUFFER_SIZE)
+		return (1);
+	return (0);
 }
 
-char	*strjoinchr(char *oldtoret, char car)
+char	*ft_check_str(char *str, int charead)
 {
-	char	*newtoret;
-	int		i;
+	if (ft_strlen(str) && charead != -1)
+		return (str);
+	free(str);
+	return (0);
+}
 
-	i = 0;
-	newtoret = malloc(ft_strlen(oldtoret) + 2);
-	while (oldtoret[i])
+char	*ft_buffer_to_str(char *src, int charead)
+{
+	int		count;
+	char	*nstr;
+
+	count = 0;
+	while (src[count] != '\n' && count < charead)
+		count++;
+	if (src[count] == '\n')
+		count++;
+	nstr = malloc(count + 1);
+	if (!nstr)
+		return (0);
+	count = 0;
+	while (src[count] != '\n' && count < charead)
 	{
-		newtoret[i] = oldtoret[i];
-		i++;
+		nstr[count] = src[count];
+		count++;
 	}
-	newtoret[i] = car;
-	newtoret[i + 1] = '\0';
-	free(oldtoret);
-	return (newtoret);
+	if (src[count] == '\n')
+		nstr[count++] = '\n';
+	nstr[count] = '\0';
+	return (nstr);
 }

@@ -6,7 +6,7 @@ MLXFLAGS = -L/usr/X11R6/lib -lX11 -lXext -lm
 # Directories
 MLX = mlx/libmlx_Linux.a
 LIBFT = includes/libft/libft.a
-SRC = sources/main.c sources/parsing.c
+SRC = sources/main.c sources/parsing.c sources/textures.c
 # Commands
 RM = rm -rf
 OBJ = $(SRC:.c=.o)
