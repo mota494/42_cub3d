@@ -6,22 +6,11 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:25:14 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 12:05:25 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/30 15:34:14 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-char	*rm_nl(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\n')
-		i++;
-	str[i] = '\0';
-	return (str);
-}
 
 char	*get_path(char *buffer)
 {

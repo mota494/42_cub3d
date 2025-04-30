@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 10:47:57 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/30 15:40:25 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_textures
 typedef struct s_colors
 {
 	char	identifier;
+	char	*path;
 	int		red;
 	int		green;
 	int		blue;
@@ -72,8 +73,13 @@ int		analiser(char *buffer, t_counters *count);
 int		check_content(char *map_dir);
 int		check_errs(char *map_dir);
 
+/* parser - value check */
+
+int		check_values(char *map_dir);
+
 /* utils */
 
 void	start_counters(t_counters *counters);
+char	*rm_nl(char *str);
 
 #endif

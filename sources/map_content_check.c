@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:34:25 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 12:15:38 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/30 14:09:57 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	add_counter(char *buffer, t_counters *count)
 		count->we += 1;
 	if (ft_strnstr(buffer, "SO", 2))
 		count->so += 1;
-	if (ft_strnstr(buffer, "F", 2))
+	if (ft_strnstr(buffer, "F", 1))
 		count->f += 1;
-	if (ft_strnstr(buffer, "C", 2))
+	if (ft_strnstr(buffer, "C", 1))
 		count->c += 1;
 }
 

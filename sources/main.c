@@ -6,9 +6,12 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:36:09 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/24 17:57:47 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/30 16:00:10 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//the floor and ceiling colors are all controled through the map->colors[i] structure where 0 is the floor and 1 is the ceiling
+//the same can be said to textures having the orders through the map->textures[i] NO/EA/WE/SO being 0/1/2/3 correspondly
 
 #include "../cub3d.h"
 
