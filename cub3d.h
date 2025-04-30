@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/25 22:27:16 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/04/30 10:47:57 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ typedef struct s_colors
 	int		blue;
 }	t_colors;
 
+typedef struct s_counters
+{
+	int	no;
+	int	so;
+	int	we;
+	int	ea;
+	int	f;
+	int	c;
+}	t_counters;
+
 typedef struct s_map
 {
 	char		**map;
@@ -54,5 +64,16 @@ int		parser(t_map *map, char *map_dir);
 char	*get_path(char *buffer);
 void	find_texture(char *buffer, t_textures *t_txt);
 int		get_texture(t_textures *textures, char *map_dir);
+
+/* parser - checker */
+
+int		check_dotfile(char *map_dir);
+int		analiser(char *buffer, t_counters *count);
+int		check_content(char *map_dir);
+int		check_errs(char *map_dir);
+
+/* utils */
+
+void	start_counters(t_counters *counters);
 
 #endif

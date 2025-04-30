@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 10:49:45 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 10:34:38 by mloureir         ###   ########.pt       */
+/*   Created: 2025/04/30 10:34:22 by mloureir          #+#    #+#             */
+/*   Updated: 2025/04/30 10:34:26 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int	parser(t_map *map, char *map_dir)
+int	check_dotfile(char *map_dir)
 {
-	if (check_errs(map_dir) != 0)
+	int		len;
+	char	*test;
+
+	len = ft_strlen(map_dir);
+	test = map_dir + len - 4;
+	if (ft_strnstr(test, ".cub", ft_strlen(test)))
+		return (0);
+	else
 		return (1);
-	if (get_texture(map->texture, map_dir) != 0)
+}
+
+int	check_errs(char *map_dir)
+{
+	int	tmp_fd;
+
+	if (check_dotfile(map_dir) != 0)
+		return (1);
+	tmp_fd = open(map_dir, O_RDONLY);
+	if (tmp_fd == -1)
+		return (1);
+	close(tmp_fd);
+	if (check_content(map_dir) != 0)
 		return (1);
 	return (0);
 }
