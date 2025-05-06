@@ -22,6 +22,22 @@ void	start_counters(t_counters *counters)
 	counters->f = 0;
 }
 
+int	ft_n_atoi(const char *nptr, int n, int s)
+{
+	int	toreturn;
+	int	index;
+
+	toreturn = 0;
+	index = s;
+	while (nptr[index] >= 48 && nptr[index] <= 57 && index < n)
+	{
+		toreturn = toreturn * 10;
+		toreturn = toreturn + (nptr[index] - 48);
+		index++;
+	}
+	return (toreturn);
+}
+
 char	*rm_nl(char *str)
 {
 	int	i;

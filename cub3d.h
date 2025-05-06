@@ -77,9 +77,18 @@ int		check_errs(char *map_dir);
 
 int		check_values(char *map_dir);
 
+/* parser - colors */
+
+char	*get_c_path(char *buffer);
+void	find_color(char *buffer, t_colors *colors);
+int		startup_check(char *str);
+int		check_coloms(char *str, t_colors *colors, int i);
+int		seperate_colors(t_colors *colors);
+
 /* utils */
 
 void	start_counters(t_counters *counters);
 char	*rm_nl(char *str);
+int		ft_n_atoi(const char *nptr, int n, int s);
 
 #endif

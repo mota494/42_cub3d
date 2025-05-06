@@ -12,32 +12,6 @@
 
 #include "../cub3d.h"
 
-char	*get_c_path(char *buffer)
-{
-	int		i;
-	char	*toret;
-
-	i = 1;
-	while (buffer[i] == 32 || (buffer[i] >= 9 && buffer[i] <= 13))
-		i++;
-	toret = ft_strdup(buffer + i);
-	return (rm_nl(toret));
-}
-
-void	find_color(char *buffer, t_colors *colors)
-{
-	if (ft_strnstr(buffer, "F", 1))
-	{
-		colors[0].identifier = 'F';
-		colors[0].path = get_c_path(buffer);
-	}
-	else if (ft_strnstr(buffer, "C", 1))
-	{
-		colors[1].identifier = 'C';
-		colors[1].path = get_c_path(buffer);
-	}
-}
-
 int	get_color(t_colors *colors, char *map_dir)
 {
 	int		fd;
@@ -53,6 +27,8 @@ int	get_color(t_colors *colors, char *map_dir)
 	}
 	close(fd);
 	free(buffer);
+	if (seperate_colors(colors) != 0)
+		return (1);
 	return (0);
 }
 

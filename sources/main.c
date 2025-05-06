@@ -27,6 +27,12 @@ void	start_vars(t_map *info)
 		info->texture[i].path = NULL;
 		i++;
 	}
+	i = 0;
+	while (i < COLOR)
+	{
+		info->texture[i].path = NULL;
+		i++;
+	}
 }
 
 void	free_all(t_map *info)
@@ -51,14 +57,27 @@ int	main(int argc, char **argv)
 	start_vars(&info);
 	if (argc != 2)
 	{
-		ft_putstr_fd("Error on arguments", STDERR_FILENO);
+		ft_putstr_fd("Error on arguments\n", STDERR_FILENO);
 		return (1);
 	}
 	if (parser(&info, argv[1]) != 0)
 	{
-		ft_putstr_fd("Map error", STDERR_FILENO);
+		ft_putstr_fd("Map error\n", STDERR_FILENO);
 		free_all(&info);
 		return (1);
+	}
+
+	int i = 0;
+	while (i < MAX_TEXTURE)
+	{
+		printf("[%s][%s]\n", info.texture[i].identifier, info.texture[i].path);
+		i++;
+	}
+	i = 0;
+	while (i < COLOR)
+	{
+		printf("[%c][%d | %d | %d]\n", info.color[i].identifier, info.color[i].red, info.color[i].green, info.color[i].blue);
+		i++;
 	}
 	free_all(&info);
 }
