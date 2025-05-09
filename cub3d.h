@@ -52,6 +52,7 @@ typedef struct s_counters
 typedef struct s_map
 {
 	char		**map;
+	char		**map_ff;
 	t_colors	color[COLOR];
 	t_textures	texture[MAX_TEXTURE];
 }	t_map;
@@ -85,10 +86,16 @@ int		startup_check(char *str);
 int		check_coloms(char *str, t_colors *colors, int i);
 int		seperate_colors(t_colors *colors);
 
+/* parser - map */
+
+int		get_map(char **map, char *map_dir);
+
 /* utils */
 
 void	start_counters(t_counters *counters);
 char	*rm_nl(char *str);
 int		ft_n_atoi(const char *nptr, int n, int s);
+int		is_a_param(char *buffer);
+int		if_space(int c);
 
 #endif

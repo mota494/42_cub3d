@@ -32,7 +32,7 @@ int	ft_n_atoi(const char *nptr, int n, int s)
 	while (nptr[index] >= 48 && nptr[index] <= 57 && index < n)
 	{
 		toreturn = toreturn * 10;
-		toreturn = toreturn + (nptr[index] - 48);
+			toreturn = toreturn + (nptr[index] - 48);
 		index++;
 	}
 	return (toreturn);
@@ -47,4 +47,22 @@ char	*rm_nl(char *str)
 		i++;
 	str[i] = '\0';
 	return (str);
+}
+
+int	is_a_param(char *buffer)
+{
+	if (ft_strnstr(buffer, "NO", 2) || ft_strnstr(buffer, "EA", 2))
+		return (3);
+	if (ft_strnstr(buffer, "WE", 2) || ft_strnstr(buffer, "SO", 2))
+		return (3);
+	if (ft_strnstr(buffer, "F", 1) || ft_strnstr(buffer, "C", 1))
+		return (2);
+	return (1);
+}
+
+int	if_space(int c)
+{
+	if (c >= 9 && c <= 13 || c == 32)
+		return (0);
+	return (1);
 }

@@ -40,5 +40,7 @@ int	parser(t_map *map, char *map_dir)
 		return (1);
 	if (get_color(map->color, map_dir) != 0)
 		return (1);
+	if (get_map(map->map, map_dir) != 0)
+		return (1);
 	return (0);
 }

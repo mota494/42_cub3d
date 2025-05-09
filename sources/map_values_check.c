@@ -12,17 +12,6 @@
 
 #include "../cub3d.h"
 
-int	is_a_param(char *buffer)
-{
-	if (ft_strnstr(buffer, "NO", 2) || ft_strnstr(buffer, "EA", 2))
-		return (3);
-	if (ft_strnstr(buffer, "WE", 2) || ft_strnstr(buffer, "SO", 2))
-		return (3);
-	if (ft_strnstr(buffer, "F", 1) || ft_strnstr(buffer, "C", 1))
-		return (2);
-	return (1);
-}
-
 int	check_for_textures(char *buffer)
 {
 	int	i;

@@ -4,9 +4,9 @@ CC = cc
 CFLAGS =  -g #-Wall -Wextra -Werror
 MLXFLAGS = -L/usr/X11R6/lib -lX11 -lXext -lm
 # Directories
-MLX = mlx/libmlx_Linux.a
+#MLX = mlx/libmlx_Linux.a
 LIBFT = includes/libft/libft.a
-SRC = sources/colors.c sources/map_values_check.c sources/map_checker.c sources/map_content_check.c sources/utils.c sources/main.c sources/parsing.c sources/textures.c
+SRC = sources/map_get.c sources/colors.c sources/map_values_check.c sources/map_checker.c sources/map_content_check.c sources/utils.c sources/main.c sources/parsing.c sources/textures.c
 # Commands
 RM = rm -rf
 OBJ = $(SRC:.c=.o)
@@ -14,13 +14,13 @@ OBJ = $(SRC:.c=.o)
 GREEN=\e[38;5;118m
 END= $<\e[0m
 
-all: checker $(NAME)
+all: $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
-$(NAME) : $(OBJ) $(LIBFT) $(PRINTF) $(MLX)
-	@$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
+$(NAME) : $(OBJ) $(LIBFT) $(PRINTF) #$(MLX)
+	@$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJ) $(LIBFT) #$(MLX) $(MLXFLAGS)
 
 $(LIBFT):
 	@make --silent -C includes/libft
@@ -28,8 +28,8 @@ $(LIBFT):
 $(MLX):
 	make -C mlx
 
-checker:
-	@if [ -d "mlx" ]; then echo "$(GREEN)[MLX FOLDER FOUND]$(END)"; else make download; fi
+#checker:
+	#@if [ -d "mlx" ]; then echo "$(GREEN)[MLX FOLDER FOUND]$(END)"; else make download; fi
 
 download:
 	git clone git@github.com:42Paris/minilibx-linux.git mlx
