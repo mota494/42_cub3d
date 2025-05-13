@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:36:09 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 16:00:10 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/13 17:06:28 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,14 @@ void	free_all(t_map *info)
 			free(info->texture[i].path);
 		i++;
 	}
+	i = 0;
+	while (i <= info->map_y && info->map_y > 0)
+	{
+		free(info->map[i]);
+		i++;
+	}
+	if (info->map_y > 0)
+		free(info->map);
 }
 
 int	main(int argc, char **argv)
@@ -65,19 +73,6 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Map error\n", STDERR_FILENO);
 		free_all(&info);
 		return (1);
-	}
-
-	int i = 0;
-	while (i < MAX_TEXTURE)
-	{
-		printf("[%s][%s]\n", info.texture[i].identifier, info.texture[i].path);
-		i++;
-	}
-	i = 0;
-	while (i < COLOR)
-	{
-		printf("[%c][%d | %d | %d]\n", info.color[i].identifier, info.color[i].red, info.color[i].green, info.color[i].blue);
-		i++;
 	}
 	free_all(&info);
 }

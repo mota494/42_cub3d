@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:19:32 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 15:34:44 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/13 16:15:26 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_n_atoi(const char *nptr, int n, int s)
 	while (nptr[index] >= 48 && nptr[index] <= 57 && index < n)
 	{
 		toreturn = toreturn * 10;
-			toreturn = toreturn + (nptr[index] - 48);
+		toreturn = toreturn + (nptr[index] - 48);
 		index++;
 	}
 	return (toreturn);

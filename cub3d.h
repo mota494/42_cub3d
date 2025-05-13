@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/30 15:40:25 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/13 16:16:23 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_map
 {
 	char		**map;
 	char		**map_ff;
+	int			map_y;
 	t_colors	color[COLOR];
 	t_textures	texture[MAX_TEXTURE];
 }	t_map;
@@ -88,7 +89,8 @@ int		seperate_colors(t_colors *colors);
 
 /* parser - map */
 
-int		get_map(char **map, char *map_dir);
+int		get_map(t_map *map, char *map_dir);
+int		copy_map(t_map *map, char *map_dir);
 
 /* utils */
 
@@ -97,5 +99,6 @@ char	*rm_nl(char *str);
 int		ft_n_atoi(const char *nptr, int n, int s);
 int		is_a_param(char *buffer);
 int		if_space(int c);
+int		is_line_empty(char *str);
 
 #endif
