@@ -54,6 +54,7 @@ typedef struct s_map
 	char		**map;
 	char		**map_ff;
 	int			map_y;
+	int			map_fpos;
 	t_colors	color[COLOR];
 	t_textures	texture[MAX_TEXTURE];
 }	t_map;
@@ -100,5 +101,6 @@ int		ft_n_atoi(const char *nptr, int n, int s);
 int		is_a_param(char *buffer);
 int		if_space(int c);
 int		is_line_empty(char *str);
+char	*jump_empty(int fd);
 
 #endif

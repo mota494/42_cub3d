@@ -54,6 +54,7 @@ int	check_content(char *map_dir)
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
+	close(fd);
 	if (check_counters(&count) != 0)
 		return (1);
 	else

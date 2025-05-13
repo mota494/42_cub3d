@@ -14,13 +14,13 @@ OBJ = $(SRC:.c=.o)
 GREEN=\e[38;5;118m
 END= $<\e[0m
 
-all: checker $(NAME)
+all: $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
-$(NAME) : $(OBJ) $(LIBFT) $(PRINTF) $(MLX)
-	@$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX) $(MLXFLAGS)
+$(NAME) : $(OBJ) $(LIBFT) $(PRINTF) #$(MLX)
+	@$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJ) $(LIBFT) #$(MLX) $(MLXFLAGS)
 
 $(LIBFT):
 	@make --silent -C includes/libft

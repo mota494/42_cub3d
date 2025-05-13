@@ -28,3 +28,18 @@ int	is_line_empty(char *str)
 	else
 		return (0);
 }
+
+char	*jump_empty(int fd)
+{
+	char	*buffer;
+
+	buffer = get_next_line(fd);
+	while (buffer)
+	{
+		if (is_line_empty(buffer) == 0)
+			break ;
+		free(buffer);
+		buffer = get_next_line(fd);
+	}
+	return (buffer);
+}

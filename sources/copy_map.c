@@ -12,21 +12,6 @@
 
 #include "../cub3d.h"
 
-char	*jump_empty(int fd)
-{
-	char	*buffer;
-
-	buffer = get_next_line(fd);
-	while (buffer)
-	{
-		if (is_line_empty(buffer) == 0)
-			break ;
-		free(buffer);
-		buffer = get_next_line(fd);
-	}
-	return (buffer);
-}
-
 int	paste_map(int fd, t_map *map)
 {
 	char	*buffer;
@@ -36,7 +21,7 @@ int	paste_map(int fd, t_map *map)
 	map->map = ft_calloc(map->map_y + 1, sizeof(char *));
 	buffer = jump_empty(fd);
 	map->map[0] = ft_strdup(buffer);
-	while (buffer)
+	while (buffer && i < map->map_y)
 	{
 		if (is_line_empty(buffer) == 1)
 			break ;
@@ -69,5 +54,6 @@ int	copy_map(t_map *map, char *map_dir)
 	}
 	if (paste_map(fd, map) != 0)
 		return (1);
+	close(fd);
 	return (0);
 }

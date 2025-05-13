@@ -49,13 +49,13 @@ void	free_all(t_map *info)
 		i++;
 	}
 	i = 0;
-	while (i <= info->map_y && info->map_y > 0)
+	/*while (i < info->map_y && info->map_y > 0)
 	{
 		free(info->map[i]);
 		i++;
 	}
 	if (info->map_y > 0)
-		free(info->map);
+		free(info->map);*/
 }
 
 int	main(int argc, char **argv)
