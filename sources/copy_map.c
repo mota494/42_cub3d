@@ -35,6 +35,8 @@ int	paste_map(int fd, t_map *map)
 		}
 		i++;
 	}
+	if (buffer)
+		free(buffer);
 	return (0);
 }
 

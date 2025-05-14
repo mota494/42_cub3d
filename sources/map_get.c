@@ -28,9 +28,14 @@ int	count_map(int fd)
 	}
 	while (buffer)
 	{
-		i++;
 		if (is_line_empty(buffer) == 1)
 			break ;
+		i++;
+		free(buffer);
+		buffer = get_next_line(fd);
+	}
+	while (buffer)
+	{
 		free(buffer);
 		buffer = get_next_line(fd);
 	}

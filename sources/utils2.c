@@ -64,7 +64,7 @@ void	print_debug(t_map *map)
 		printf(" %d]\n", map->color[c.f].blue);
 		c.f++;
 	}
-	while (c.ea <= map->map_y)
+	while (c.ea < map->map_y)
 	{
 		printf("%s\n", map->map[c.ea]);
 		c.ea++;
