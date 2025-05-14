@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:37:26 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/13 16:32:13 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/14 10:37:20 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	count_map(int fd)
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
-	free(buffer);
-	buffer = get_next_line(fd);
 	while (buffer)
 	{
 		i++;

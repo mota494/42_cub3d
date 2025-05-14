@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:11:12 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/13 17:01:57 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/14 10:10:18 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@ int	paste_map(int fd, t_map *map)
 	map->map = ft_calloc(map->map_y + 1, sizeof(char *));
 	buffer = jump_empty(fd);
 	map->map[0] = ft_strdup(buffer);
-	while (buffer && i < map->map_y)
+	map->map[0] = rm_nl(map->map[0]);
+	while (buffer && i <= map->map_y)
 	{
 		if (is_line_empty(buffer) == 1)
 			break ;
 		free(buffer);
 		buffer = get_next_line(fd);
 		if (buffer)
+		{
 			map->map[i] = ft_strdup(buffer);
+			map->map[i] = rm_nl(map->map[i]);
+		}
 		i++;
 	}
 	return (0);

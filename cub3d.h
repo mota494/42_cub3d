@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/13 16:16:23 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/14 09:02:50 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int		is_a_param(char *buffer);
 int		if_space(int c);
 int		is_line_empty(char *str);
 char	*jump_empty(int fd);
+void	print_debug(t_map *map);
 
 #endif
