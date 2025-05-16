@@ -6,22 +6,14 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/14 09:02:50 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 09:33:47 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define MAX_TEXTURE 4
-# define COLOR 2
-
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <math.h>
-# include <sys/time.h>
-# include "includes/libft/libft.h"
+# include "defines.h"
 
 typedef struct s_textures
 {

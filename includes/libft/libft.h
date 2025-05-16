@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:27:43 by mloureir          #+#    #+#             */
-/*   Updated: 2025/04/24 12:27:48 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 09:31:30 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* get_next_line */
-
 
 char	*get_next_line(int fd);
 char	*ft_check_str(char *str, int charead);

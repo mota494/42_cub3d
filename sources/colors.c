@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/16 09:31:02 by mloureir          #+#    #+#             */
+/*   Updated: 2025/05/16 09:31:12 by mloureir         ###   ########.pt       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
 char	*get_c_path(char *buffer)
@@ -46,7 +58,7 @@ int	startup_check(char *str)
 
 int	check_coloms(char *str, t_colors *colors, int i)
 {
-	t_counters c;
+	t_counters	c;
 
 	start_counters(&c);
 	if (startup_check(str) != 0)

@@ -6,11 +6,20 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:37:26 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/14 10:37:20 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 09:26:07 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+void	gnl_finish(int fd, char *buffer)
+{
+	while (buffer)
+	{
+		free(buffer);
+		buffer = get_next_line(fd);
+	}
+}
 
 int	count_map(int fd)
 {
@@ -34,11 +43,7 @@ int	count_map(int fd)
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
-	while (buffer)
-	{
-		free(buffer);
-		buffer = get_next_line(fd);
-	}
+	gnl_finish(fd, buffer);
 	return (i);
 }
 
