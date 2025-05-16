@@ -6,11 +6,26 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:11:12 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/14 10:10:18 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 14:46:08 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+int	check_gnl(char *buffer, int fd)
+{
+	while (buffer)
+	{
+		if (is_line_empty(buffer) == 0)
+		{
+			free(buffer);
+			return (1);
+		}
+		free(buffer);
+		buffer = get_next_line(fd);
+	}
+	return (0);
+}
 
 int	paste_map(int fd, t_map *map)
 {
@@ -35,8 +50,8 @@ int	paste_map(int fd, t_map *map)
 		}
 		i++;
 	}
-	if (buffer)
-		free(buffer);
+	if (check_gnl(buffer, fd) != 0)
+		return (1);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 10:49:45 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/13 17:06:15 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 10:36:29 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	parser(t_map *map, char *map_dir)
 	if (get_map(map, map_dir) != 0)
 		return (1);
 	if (copy_map(map, map_dir) != 0)
+		return (1);
+	if (verify_values(map) != 0)
 		return (1);
 	return (0);
 }

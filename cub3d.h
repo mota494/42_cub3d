@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:37:02 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/16 09:33:47 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 14:16:33 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ int		seperate_colors(t_colors *colors);
 int		get_map(t_map *map, char *map_dir);
 int		copy_map(t_map *map, char *map_dir);
 
+/* parser - verify values */
+
+int		verify_values(t_map *map);
+
 /* utils */
 
 void	start_counters(t_counters *counters);
@@ -95,5 +99,7 @@ int		if_space(int c);
 int		is_line_empty(char *str);
 char	*jump_empty(int fd);
 void	print_debug(t_map *map);
+int		map_chars(int c);
+void	change_spaces(t_map *map);
 
 #endif

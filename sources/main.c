@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:36:09 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/16 10:34:51 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 14:43:58 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	main(int argc, char **argv)
 		free_all(&info);
 		return (1);
 	}
-	print_debug(&info);
+	//print_debug(&info);
 	free_all(&info);
 }

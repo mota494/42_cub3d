@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:15:40 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/14 10:19:36 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/16 14:18:04 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,34 @@ void	print_debug(t_map *map)
 	{
 		printf("%s\n", map->map[c.ea]);
 		c.ea++;
+	}
+}
+
+int	map_chars(int c)
+{
+	if (c == '1' || c == '0')
+		return (4);
+	else if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
+		return (3);
+	else
+		return (1);
+}
+
+void	change_spaces(t_map *map)
+{
+	int	i;
+	int	f;
+
+	f = 0;
+	while (f <= map->map_y)
+	{
+		i = 0;
+		while (i < ft_strlen(map->map[f]))
+		{
+			if (if_space(map->map[f][i]) == 0)
+				map->map[f][i] = '0';
+			i++;
+		}
+		f++;
 	}
 }
