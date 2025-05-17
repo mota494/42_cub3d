@@ -78,5 +78,7 @@ int	verify_values(t_map *map)
 	change_spaces(map);
 	if (verify_map(map) != 0)
 		return (1);
+	if (verify_ff(map) != 0)
+		return (1);
 	return (0);
 }

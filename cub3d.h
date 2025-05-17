@@ -46,6 +46,7 @@ typedef struct s_map
 	char		**map;
 	char		**map_ff;
 	int			map_y;
+	int			map_ff_y;
 	int			map_fpos;
 	t_colors	color[COLOR];
 	t_textures	texture[MAX_TEXTURE];
@@ -88,6 +89,7 @@ int		copy_map(t_map *map, char *map_dir);
 /* parser - verify values */
 
 int		verify_values(t_map *map);
+int		verify_ff(t_map *map);
 
 /* utils */
 

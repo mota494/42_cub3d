@@ -18,6 +18,7 @@ void	start_vars(t_map *info)
 
 	i = 0;
 	info->map_y = 0;
+	info->map_ff_y = 0;
 	while (i < MAX_TEXTURE)
 	{
 		info->texture[i].identifier = NULL;
@@ -33,6 +34,28 @@ void	start_vars(t_map *info)
 	}
 }
 
+void	free_maps(t_map *info)
+{
+	int	i;
+
+	i = 0;
+	while (i <= info->map_y && info->map_y > 0)
+	{
+		free(info->map[i]);
+		i++;
+	}
+	if (info->map_y > 0)
+		free(info->map);
+	i = 0;
+	while (i <= info->map_ff_y && info->map_ff_y > 0)
+	{
+		free(info->map_ff[i]);
+		i++;
+	}
+	if (info->map_ff_y > 0)
+		free(info->map_ff);
+}
+
 void	free_all(t_map *info)
 {
 	int	i;
@@ -46,14 +69,7 @@ void	free_all(t_map *info)
 			free(info->texture[i].path);
 		i++;
 	}
-	i = 0;
-	while (i <= info->map_y && info->map_y > 0)
-	{
-		free(info->map[i]);
-		i++;
-	}
-	if (info->map_y > 0)
-		free(info->map);
+	free_maps(info);
 }
 
 int	main(int argc, char **argv)

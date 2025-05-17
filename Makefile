@@ -6,7 +6,7 @@ MLXFLAGS = -L/usr/X11R6/lib -lX11 -lXext -lm
 # Directories
 MLX = mlx/libmlx_Linux.a
 LIBFT = includes/libft/libft.a
-SRC = sources/verify.c sources/utils2.c sources/copy_map.c sources/map_get.c sources/colors.c sources/map_values_check.c sources/map_checker.c sources/map_content_check.c sources/utils.c sources/main.c sources/parsing.c sources/textures.c
+SRC = sources/flood_fill.c sources/verify.c sources/utils2.c sources/copy_map.c sources/map_get.c sources/colors.c sources/map_values_check.c sources/map_checker.c sources/map_content_check.c sources/utils.c sources/main.c sources/parsing.c sources/textures.c
 # Commands
 RM = rm -rf
 OBJ = $(SRC:.c=.o)
