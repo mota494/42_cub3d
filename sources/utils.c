@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:19:32 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/13 16:15:26 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/20 09:22:25 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_a_param(char *buffer)
 
 int	if_space(int c)
 {
-	if (c >= 9 && c <= 13 || c == 32)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (0);
 	return (1);
 }

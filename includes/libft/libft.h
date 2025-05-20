@@ -12,12 +12,17 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <ctype.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdarg.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 21
 # endif
 
 typedef struct s_list
@@ -70,6 +75,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_check_specifier(const char *str, int i, va_list args,
+			unsigned int *byte_count);
+void	ft_hexa_xs(unsigned int nb, char type,
+			unsigned int *byte_count);
+void	ft_hexa_p(unsigned long long nb, unsigned int *byte_count);
+void	ft_printf_putnbr(int nb, unsigned int *byte_count);
+void	ft_putnbr_u(unsigned int nb, unsigned int *byte_count);
+int		ft_putchar(char c);
+void	ft_writing(char *str, unsigned int *byte_count);
+char	*ft_firstword(char *command);
+int		ft_count(char const *s, char c);
+char	*ft_find_chrs(char *main_str, char *c_to_look);
+void	*s_malloc(size_t bt);
 
 /* get_next_line */
 

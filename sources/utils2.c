@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:15:40 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/16 14:18:04 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/20 09:22:03 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_line_empty(char *str)
 			count++;
 		i++;
 	}
-	if (count == ft_strlen(str))
+	if (count == (int)ft_strlen(str))
 		return (1);
 	else
 		return (0);
@@ -90,7 +90,7 @@ void	change_spaces(t_map *map)
 	while (f <= map->map_y)
 	{
 		i = 0;
-		while (i < ft_strlen(map->map[f]))
+		while (i < (int)ft_strlen(map->map[f]))
 		{
 			if (if_space(map->map[f][i]) == 0)
 				map->map[f][i] = '0';

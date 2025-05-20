@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 09:20:35 by mloureir          #+#    #+#             */
+/*   Updated: 2025/05/20 09:21:00 by mloureir         ###   ########.pt       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
 int	get_big_x(t_map *map)
@@ -7,7 +19,7 @@ int	get_big_x(t_map *map)
 	start_counters(&c);
 	while (c.c <= map->map_y)
 	{
-		if (ft_strlen(map->map[c.c]) > c.we)
+		if ((int)ft_strlen(map->map[c.c]) > c.we)
 			c.we = ft_strlen(map->map[c.c]);
 		c.c++;
 	}

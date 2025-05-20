@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@42porto.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:37:34 by mloureir          #+#    #+#             */
-/*   Updated: 2025/05/16 14:20:40 by mloureir         ###   ########.pt       */
+/*   Updated: 2025/05/20 09:21:28 by mloureir         ###   ########.pt       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	verify_map(t_map *map)
 	while (c.f <= map->map_y)
 	{
 		c.c = 0;
-		while (c.c < ft_strlen(map->map[c.f]))
+		while (c.c < (int)ft_strlen(map->map[c.f]))
 		{
 			d = map->map[c.f][c.c];
 			if (map_chars(d) == 3)
